@@ -1,0 +1,27 @@
+---
+jobs:
+- name: job-deploy-app
+  public: true
+  serial: true
+  plan:
+  - get: resource-web-app
+  - put: resource-deploy-web-app
+    params:
+     manifest: resource-web-app/manifest.yml
+     path: resource-web-app/build/libs/legacy-cities-example.war
+
+resources:
+- name: resource-web-app
+  type: git
+  source:
+    uri: https://github.com/kstrini/legacy-cities.git
+
+- name: resource-deploy-web-app
+  type: cf
+  source:
+   api: https://api.run.pivotal.io
+   username:
+   password:
+   organization:
+   space:
+   skip_cert_check: true

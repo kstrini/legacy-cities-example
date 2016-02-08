@@ -4,6 +4,6 @@ applications:
   host: legacy-spring-cities
   memory: 1GB
   instances: 1
-  path: build/libs/legacy-cities-example.war
+#  path: build/libs/legacy-cities-example.war
   services:
   - p-mysql

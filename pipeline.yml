@@ -19,9 +19,10 @@ resources:
 - name: resource-deploy-web-app
   type: cf
   source:
-   api: https://api.run.pivotal.io
-   username:
-   password:
-   organization:
-   space:
+   api: {{cf-api}}
+   username: {{cf-username}}
+   password: {{cf-passwd}}
+   organization: {{cf-org}}
+   space: {{cf-space}}
    skip_cert_check: true
+
